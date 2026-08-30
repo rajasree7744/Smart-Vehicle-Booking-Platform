@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RideRent — Car & Bike Rental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app"><aside class="sidebar"><div class="brand"><b>R</b><div><strong>RideRent</strong><small>Rental Management</small></div></div>
+<nav><a class="nav active" data-page="dashboard">⌂ <span>Dashboard</span></a><a class="nav" data-page="vehicles">▣ <span>Vehicles</span></a><a class="nav" data-page="bookings">▤ <span>Bookings</span></a></nav>
+<div class="side-note">✓ <div><b>Smart availability</b><small>Overlapping rental dates are blocked automatically.</small></div></div><small class="side-foot">Spring Boot REST API • MySQL</small></aside>
+<main><header><div><small>VEHICLE RENTAL PLATFORM</small><h1 id="title">Dashboard</h1></div><button id="newBtn">+ New Booking</button></header>
+<section id="dashboard" class="page active"><div class="hero"><div><small>MOVE WITHOUT LIMITS</small><h2>Find your next <i>ride.</i></h2><p>Browse cars and bikes, select rental dates, check real-time availability and confirm a booking.</p><button id="browse">Browse vehicles →</button></div><div class="hero-art"><div class="float"><b id="heroCount">0</b><small>vehicles ready</small></div><div class="emoji">🚙</div></div></div>
+<div class="stats"><div><small>Fleet size</small><b id="carsAll">0</b><span>Cars + bikes</span></div><div><small>Cars</small><b id="cars">0</b><span>In fleet</span></div><div><small>Bikes</small><b id="bikes">0</b><span>In fleet</span></div><div><small>Bookings</small><b id="bookCount">0</b><span>Recorded</span></div></div>
+<div class="card"><div class="heading"><div><small>QUICK SEARCH</small><h3>Check availability</h3></div><span class="online">● API connected</span></div>
+<div class="date-row"><label>Pick-up<input type="date" id="ds"></label><label>Return<input type="date" id="de"></label><button id="check">Check vehicles</button></div></div></section>
+<section id="vehicles" class="page"><div class="heading"><div><small>YOUR FLEET</small><h3>Vehicles for rent</h3></div><div class="filters"><input id="search" placeholder="Search vehicle..."><select id="filter"><option value="ALL">All types</option><option value="CAR">Cars</option><option value="BIKE">Bikes</option></select></div></div><div id="grid" class="grid"></div></section>
+<section id="bookings" class="page"><div class="heading"><div><small>RENTAL RECORDS</small><h3>Customer bookings</h3></div><button class="light" id="refresh">↻ Refresh</button></div><div class="table"><table><thead><tr><th>Customer</th><th>Vehicle</th><th>Dates</th><th>Days</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table><div id="empty">No bookings yet.</div></div></section>
+</main></div>
+<div id="modal" class="modal"><div class="modal-box"><button id="close">×</button><small>RESERVE A RIDE</small><h3>Confirm your booking</h3><p id="chosen"></p><form id="form"><input type="hidden" id="vid"><div class="form-grid"><label>Name<input id="name" required placeholder="Full name"></label><label>Phone<input id="phone" required placeholder="9876543210"></label><label class="full">Email<input id="email" type="email" required placeholder="you@example.com"></label><label>Pick-up<input id="start" type="date" required></label><label>Return<input id="end" type="date" required></label></div><div class="estimate"><span>Estimated total</span><b id="total">₹0</b></div><button class="submit" type="submit">Confirm booking</button></form></div></div>
+<div id="toast"></div><script src="app.js"></script>
+</body></html>
