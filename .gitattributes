@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Java backend
+CarBike-Rental-System-Upgraded-UI/CarBike-Rental-System/backend/**/*.java linguist-language=Java
+
+# Frontend files are not counted toward the primary language
+CarBike-Rental-System-Upgraded-UI/CarBike-Rental-System/frontend/*.js linguist-vendored
+CarBike-Rental-System-Upgraded-UI/CarBike-Rental-System/frontend/*.css linguist-vendored
+CarBike-Rental-System-Upgraded-UI/CarBike-Rental-System/frontend/*.html linguist-vendored
